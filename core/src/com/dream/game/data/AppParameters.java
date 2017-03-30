@@ -28,7 +28,13 @@ public class AppParameters {
     /**已经超越神了！拜托谁去杀了他吧！（杀十人或以上）*/
     public final static String VOICE_HOLYSHIT="HolyShit.mp3";
 
+    //----------------纹理图集---------------
+    public final static String BASE_ATLAS_PATH="picture/";
+    public final static String GUAN_UP_NORMAL="guan_up_normal.png";
 
+
+    public final static int ROW_SIZE=4;
+    public final static int COLCUME_SIZE=4;
 
 
 }
