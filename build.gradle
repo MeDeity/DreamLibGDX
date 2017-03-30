@@ -111,6 +111,14 @@ project(":core") {
     }
 }
 
+project(":ares") {
+    apply plugin: 'java'
+    dependencies {
+        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+    }
+}
+
 tasks.eclipse.doLast {
     delete ".project"
 }

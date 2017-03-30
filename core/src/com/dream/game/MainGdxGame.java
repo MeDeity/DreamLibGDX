@@ -1,10 +1,12 @@
 package com.dream.game;
 
+import com.ares.common.BaseUtils;
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.dream.game.data.AppParameters;
+import com.dream.game.data.GameResManager;
 
 public class MainGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -14,12 +16,15 @@ public class MainGdxGame extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+		GameResManager.getInstance().initResource();
+		Sound sound = GameResManager.getInstance().getAssetManager().get(AppParameters.BASE_VOICE_PATH+AppParameters.VOICE_BULLET, Sound.class);
+		sound.play(1.0f,1.0f,1.0f);
+
 	}
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		BaseUtils.clearScreen(0.0f,1.0f,1.0f,1.0f);
 		batch.begin();
 		batch.draw(img, 0, 0);
 		batch.end();
