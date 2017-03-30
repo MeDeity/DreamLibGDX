@@ -31,12 +31,13 @@ public class GameResManager {
         return assetManager;
     }
 
-    public void playSound(){
-
+    public void playSound(String voiceFileName){
+        Sound sound = assetManager.get(AppParameters.BASE_VOICE_PATH+voiceFileName,Sound.class);
+        sound.play();
     }
 
     public void initResource(){
-        assetManager.load(AppParameters.BASE_VOICE_PATH+AppParameters.VOICE_BULLET, Sound.class);
+        assetManager.load(AppParameters.BASE_VOICE_PATH+AppParameters.VOICE_TEST, Sound.class);
         assetManager.finishLoading();
     }
 
