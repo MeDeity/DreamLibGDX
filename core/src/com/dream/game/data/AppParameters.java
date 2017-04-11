@@ -6,6 +6,8 @@ package com.dream.game.data;
  */
 
 public class AppParameters {
+    public final static float FIX_WORLD_WIDTH=480f;
+
     public final static String BASE_VOICE_PATH = "sound/";
     /**测试*/
     public final static String VOICE_TEST="Bullet.ogg";
@@ -30,11 +32,19 @@ public class AppParameters {
 
     //----------------纹理图集---------------
     public final static String BASE_ATLAS_PATH="picture/";
+    public final static String BASE_ATLAS_IMAGE="images.atlas";
+
     public final static String GUAN_UP_NORMAL="guan_up_normal.png";
+    public final static String GUAN_UP_MELEE="guan_up_melee.png";
+    public final static String GUAN_UP_DEAD="guan_up_dead.png";
+    public static final String IMAGE_GAME_BG = "game_bg";
+    public static final String IMAGE_GAME_FLOOR = "game_floor";
 
 
     public final static int ROW_SIZE=4;
     public final static int COLCUME_SIZE=4;
+
+    public static float FLOOR_HEIGHT;
 
 
 }

@@ -7,4 +7,5 @@ eclipse.project {
 }
 dependencies {
     compile project(':ares')
+    compile 'net.onedaybeard.artemis:artemis-odb:1.1.2'
 }

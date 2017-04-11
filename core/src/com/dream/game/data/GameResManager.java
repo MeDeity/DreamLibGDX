@@ -4,6 +4,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 /**
@@ -14,6 +15,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 public class GameResManager {
     private volatile static GameResManager gameResManager;
     private AssetManager assetManager;
+
+    public static final short BIT_PLAYER=1;
+    public static final short BIT_ENEMY=1<<1;
 
     private GameResManager(){
         assetManager = new AssetManager();
@@ -53,10 +57,23 @@ public class GameResManager {
         return animation;
     }
 
+    public TextureRegion[][] obtainAnimationArray(String atlasFileName){
+        Texture texture = assetManager.get(AppParameters.BASE_ATLAS_PATH+atlasFileName,Texture.class);
+        TextureRegion[][] textureRegions = TextureRegion.split(texture,texture.getWidth()/AppParameters.ROW_SIZE,texture.getHeight()/AppParameters.COLCUME_SIZE);
+        return textureRegions;
+    }
+
     public void initResource(){
         assetManager.load(AppParameters.BASE_VOICE_PATH+AppParameters.VOICE_TEST, Sound.class);
         assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.GUAN_UP_NORMAL, Texture.class);
+        assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.GUAN_UP_MELEE, Texture.class);
+        assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.GUAN_UP_DEAD, Texture.class);
+        assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.BASE_ATLAS_IMAGE, TextureAtlas.class);
         assetManager.finishLoading();
+    }
+
+    public TextureAtlas getAtlas(){
+        return assetManager.get(AppParameters.BASE_ATLAS_PATH+AppParameters.BASE_ATLAS_IMAGE,TextureAtlas.class);
     }
 
 
