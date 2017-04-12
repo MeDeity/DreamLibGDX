@@ -34,6 +34,11 @@ public class AppParameters {
     public final static String BASE_ATLAS_PATH="picture/";
     public final static String BASE_ATLAS_IMAGE="images.atlas";
 
+    public final static String WEDGET_BORDER="border.png";
+    public final static String WEDGET_BTN_A_NORMAL="btn_a_normal.png";
+    public final static String WEDGET_BTN_A_PRESS="btn_a_press.png";
+    public final static String WEDGET_BTN_B_NORMAL="btn_b_normal.png";
+    public final static String WEDGET_BTN_B_PRESS="btn_b_press.png";
     public final static String GUAN_UP_NORMAL="guan_up_normal.png";
     public final static String GUAN_UP_MELEE="guan_up_melee.png";
     public final static String GUAN_UP_DEAD="guan_up_dead.png";

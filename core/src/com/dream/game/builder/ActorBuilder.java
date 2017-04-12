@@ -122,7 +122,7 @@ public class ActorBuilder {
         AnimationComponent animationComponent = new AnimationComponent(mHashMap);
         StatusComponent statusComponent = new StatusComponent(AnimationComponent.PersonStatus.WALKING_RIGHT.name());
 
-        Entity entity = new EntityBuilder(world).with(renderCompnonet,animationComponent,statusComponent,new TransformComponent(x+renderCompnonet.getOriginX(),y+renderCompnonet.getOriginY())).build();
+        Entity entity = new EntityBuilder(world).with(renderCompnonet,animationComponent,statusComponent,new TransformComponent(x-renderCompnonet.getOriginX(),y+renderCompnonet.getOriginY())).build();
         body.setUserData(entity);
     }
 }

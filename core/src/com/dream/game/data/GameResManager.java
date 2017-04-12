@@ -69,6 +69,12 @@ public class GameResManager {
         assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.GUAN_UP_MELEE, Texture.class);
         assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.GUAN_UP_DEAD, Texture.class);
         assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.BASE_ATLAS_IMAGE, TextureAtlas.class);
+        assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.WEDGET_BORDER, Texture.class);
+
+        assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.WEDGET_BTN_A_NORMAL, Texture.class);
+        assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.WEDGET_BTN_A_PRESS, Texture.class);
+        assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.WEDGET_BTN_B_NORMAL, Texture.class);
+        assetManager.load(AppParameters.BASE_ATLAS_PATH+AppParameters.WEDGET_BTN_B_PRESS, Texture.class);
         assetManager.finishLoading();
     }
 
