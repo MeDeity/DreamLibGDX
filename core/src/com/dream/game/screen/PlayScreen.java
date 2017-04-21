@@ -81,11 +81,24 @@ public class PlayScreen extends ScreenAdapter {
         borderImage.setWidth(mainGdxGame.getWorldWidth());
         borderImage.setPosition(0,mainGdxGame.getWorldHeight()/2);
 
+        //对话框内容
         Label.LabelStyle labelStyle = new Label.LabelStyle(new BitmapFont(), Color.BLACK);
         Label label = new Label("99*100=?", labelStyle);
         label.setText("99*100=?  A:990   B:9900");
         label.setX(border.getLeftWidth()*3);
         label.setY(mainGdxGame.getWorldHeight()/2+borderImage.getHeight()/2-label.getHeight()/2);
+
+        //积分显示
+        Label scoreLabel = new Label("99*100=?", labelStyle);
+        scoreLabel.setText("score:99");
+        scoreLabel.setX(mainGdxGame.getWorldWidth()/2-scoreLabel.getOriginX());
+        scoreLabel.setY(mainGdxGame.getWorldHeight()-scoreLabel.getHeight());
+
+        //Leave Time
+        Label leaveTimeLabel = new Label("99*100=?", labelStyle);
+        leaveTimeLabel.setText("Time:60");
+        leaveTimeLabel.setX(mainGdxGame.getWorldWidth()-scoreLabel.getWidth());
+        leaveTimeLabel.setY(mainGdxGame.getWorldHeight()-scoreLabel.getHeight());
 
         //按钮添加
         upATexture = GameResManager.getInstance().getAssetManager().get(AppParameters.BASE_ATLAS_PATH+AppParameters.WEDGET_BTN_A_NORMAL);
@@ -122,6 +135,8 @@ public class PlayScreen extends ScreenAdapter {
         stage.addActor(buttonA);
         stage.addActor(buttonB);
         stage.addActor(label);
+        stage.addActor(scoreLabel);
+        stage.addActor(leaveTimeLabel);
         Gdx.input.setInputProcessor(stage);
     }
 
